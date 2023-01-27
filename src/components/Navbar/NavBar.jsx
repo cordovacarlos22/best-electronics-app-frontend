@@ -6,7 +6,7 @@ import ShoppingCart from '.././ShoppinCart/ShoppinCart'
 
 const NavBar = () => {
 
-//  const [userLogin,setUserLogin] = useState(true);
+ const [userLogin,setUserLogin] = useState(true);
 
 //  if (placeholder == ''){
 //    setPlaceHolder('Hi, What can we help you find? ') 
@@ -49,8 +49,8 @@ const NavBar = () => {
         </div>
         
         
-        <div className='search-container items-center flex align-middle drop-shadow-md  m-2'>
-          <input className='w-80 h-10 rounded-l-lg p-1' type="search" name='searchbtn' placeholder='Hi,What can we help you find?' ></input>
+        <div onChange={() => setUserLogin(false)} className='search-container items-center flex align-middle drop-shadow-md  m-2'>
+          <input className='w-80 h-10 rounded-l-lg p-1' type="search" name='searchbtn' placeholder={userLogin? 'what can we help you find': `Hi, carlos what can we help you find`} ></input>
           <button ><span id="searchIcon" className='text-xl py-2  bg-white h-10 rounded-r-lg'><ion-icon name="search-outline"></ion-icon></span></button>
         </div>
 
