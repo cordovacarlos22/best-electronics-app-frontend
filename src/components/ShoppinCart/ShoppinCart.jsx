@@ -16,9 +16,9 @@ const StyledBadge = styled(Badge)(({ theme }) => ({
 
 export default function CustomizedBadges() {
   return (
-    <IconButton  aria-label="cart">
-      <StyledBadge  badgeContent={4} color="primary">
-        <ShoppingCartIcon id='shoppingCart'  />
+    <IconButton   aria-label="cart">
+      <StyledBadge className='text-white text-2xl ' badgeContent={1} color='secondary'>
+        <ShoppingCartIcon className='text-2xl' id='shoppingCart'  />
       </StyledBadge>
     </IconButton>
   );

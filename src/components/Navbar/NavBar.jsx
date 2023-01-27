@@ -43,8 +43,8 @@ const NavBar = () => {
           <span className='text-3x1 text-[#FFE000]'><ion-icon name="pricetags-outline"></ion-icon> </span>
           <h1 className='flex flex-col  text-2xl'>Best Deals <hr /> <span className='text-sm text-[#FFE000]'>Electronics</span></h1>
           <br/>
-          <div onClick={() => setOpen(!open)} className='text-2xl text-white  cursor-pointer  '>
-            <ion-icon className='text-lg' name={open ? 'close' : 'menu'}></ion-icon>
+          <div onClick={() => setOpen(!open)} className=' text-white  cursor-pointer  '>
+            <ion-icon className='w-28' name={open ? 'close' : 'menu'}></ion-icon>
           </div>
         </div>
         
@@ -54,8 +54,9 @@ const NavBar = () => {
           <button ><span id="searchIcon" className='text-xl py-2  bg-white h-10 rounded-r-lg'><ion-icon name="search-outline"></ion-icon></span></button>
         </div>
 
-        <div className={`bg-[#FFE000] rounded-lg md:flex  text-center align-middle w-12  m-2 cursor-pointer`} >
-          <ShoppingCart />
+        <div className={` rounded-lg md:flex  text-center align-middle w-12  m-2 cursor-pointer`} >
+          <ShoppingCart ></ShoppingCart>
+          <span className='m-2 text-white underline hover:underline-offset-4  text-2xl'>Cart</span>
         </div> 
         <div className='menu-container md:flex  items-center ml-5 g'>
           <ul className='menu-ul  md:flex-row  md:flex text-xl  absolute md:static bg-blue-700 md:pb-0 pb-12 md:z-auto z[1] left-0 w-full md:pl0- pl-9  duration-500 ease-in'>
