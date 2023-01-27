@@ -6,7 +6,7 @@ import Announcement  from './components/Announcement/Announcement.jsx';
 import Home from "./pages/Home/Home"
 export default function App() {
   return (
-    <div className="App main-container">
+    <div className="App main-container bg-blue-600 w-screen h-screen " >
       <div className="links-container">
         <BrowserRouter>
             <Announcement/>
