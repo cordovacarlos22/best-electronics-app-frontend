@@ -18,7 +18,7 @@ const NavBar = () => {
 
 // const users = [
 //   {name:"carlos"}
-// ]
+// ] 
 
   //? obj with path links and list name
   let Links = [
@@ -37,7 +37,7 @@ const NavBar = () => {
   return (
  
    
-    <div className='  w-full '> 
+    <div className='  w-full z-40'> 
       <nav className='md:flex bg-blue-700  py-6 items-center justify-around p-5 '>
         <div  className='logo-container font-bold text-2x1 cursor-pointer flex items-center font-[Poppins] text-white gap-2 ml-0.5 text-2xl md:items-center m-2'>
           <span className='text-3x1 text-[#FFE000]'><ion-icon name="pricetags-outline"></ion-icon> </span>
@@ -59,7 +59,7 @@ const NavBar = () => {
           <span className='m-2 text-white underline hover:underline-offset-4  text-2xl'>Cart</span>
         </div> 
         <div className='menu-container md:flex  items-center ml-5 g'>
-          <ul className='menu-ul  md:flex-row  md:flex text-xl  absolute md:static bg-blue-700 md:pb-0 pb-12 md:z-auto z[1] left-0 w-full md:pl0- pl-9  duration-500 ease-in'>
+          <ul onClick={() => setOpen(!open)} className='menu-ul  md:flex-row  md:flex text-xl  z-40 absolute md:static bg-blue-700 md:pb-0 pb-12 md:z-auto  left-0 w-full md:pl0- pl-9  duration-500 ease-in'>
             {
               Links && Links.map(link => (
                 <li key={link.name} className={`md:ml-8 text-teal-50 md:my-0 my-7 ${open ? 'show' : 'hidden'} `}>

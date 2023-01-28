@@ -6,12 +6,12 @@ import Announcement  from './components/Announcement/Announcement.jsx';
 import Home from "./pages/Home/Home"
 export default function App() {
   return (
-    <div className="App main-container bg-blue-600 w-screen h-screen " >
+    <div className="App main-container   w-screen h-screen " >
       <div className="links-container">
-        <BrowserRouter>
-            <Announcement/>
+        <BrowserRouter> 
+          <Announcement />
           <Navbars></Navbars>
-
+          
           <Routes>
             <Route path="/" element={<Home />} />
           </Routes>
