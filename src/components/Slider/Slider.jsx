@@ -1,6 +1,7 @@
 import React from 'react'
 import { useState } from 'react'
-import { BsChevronCompactLeft, BsChevronCompactRight } from 'react-icons/bs'
+import { BsChevronCompactLeft, BsChevronCompactRight } from 'react-icons/bs';
+import {RxDotFilled} from "react-icons/rx";
 const Slider = () => {
 
   const slides = [
@@ -21,17 +22,35 @@ const Slider = () => {
   ]
 
   const [currentIndex,setCurrentIndex] = useState(0);
+
+  const prevSlide = () =>{
+    const isFirstSlide = currentIndex === 0;
+    const newIndex  = isFirstSlide? slides.length -1 : currentIndex -1  ;
+    setCurrentIndex(newIndex);
+  };
+
+  const nextSlide = () => {
+    const isSecondSlide = currentIndex === slides.length -1 ;
+    const newSecondIndex = isSecondSlide ? 0 : currentIndex + 1;
+    setCurrentIndex(newSecondIndex);
+  };
   
+
+
   return (
     <div className='slider-container  h-[850px] w-screen m-auto py-16 px-4 relative bg-blue-600 z--0 '>
-      <div style={{ backgroundImage: `url(${slides[0].url})` }} className='w-full h-full rounded-2xl  bg-center bg-cover duration-500 group'>
+      <div style={{ backgroundImage: `url(${slides[currentIndex].url})` }} className='w-full h-full rounded-2xl  bg-center bg-cover duration-500 group'>
+        <h1></h1>
       {/* left arrow */}
-      <div className='hidden group-hover:block absolute top-[50%] -trasnlate-x-0 trnaslate-y-[-50%] left-5 text-2x1 rounded-full p-2 m-4 bg-black/20 text-white cursor-pointerhiden '>
+      <div onClick={prevSlide}  className='hidden group-hover:block absolute top-[50%] -trasnlate-x-0 trnaslate-y-[-50%] left-5 text-2x1 rounded-full p-2 m-4 bg-black/20 text-white cursor-pointerhiden '>
           <BsChevronCompactLeft size={30} />
       </div>
       {/* right arrow */}
-        <div className='hidden group-hover:block absolute top-[50%] -trasnlate-x-0 trnaslate-y-[-50%] right-5 text-2x1 rounded-full p-2 m-4 bg-black/20 text-white cursor-pointer'>
+        <div onClick={nextSlide} className='hidden group-hover:block absolute top-[50%] -trasnlate-x-0 trnaslate-y-[-50%] right-5 text-2x1 rounded-full p-2 m-4 bg-black/20 text-white cursor-pointer'>
           <BsChevronCompactRight  size={30}/>
+        </div>
+        <div>
+
         </div>
      </div>
     </div>
