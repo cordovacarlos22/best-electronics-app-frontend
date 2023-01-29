@@ -1,14 +1,16 @@
+
 import React from 'react'
 import { useState } from 'react'
 import { BsChevronCompactLeft, BsChevronCompactRight } from 'react-icons/bs';
-// import {RxDotFilled} from "react-icons/rx";
+
+
 const Slider = (props) => {
 
   const slides = [
     {
-      title:"Laptops and computers",
-      desc:"lorem ",
-      url:'https://media.wired.com/photos/5faed077f9e76246dde3355d/master/pass/Gear-Surface-Laptop-Go-SOURCE-Microsoft.jpg'
+      title: "Laptops and computers",
+      desc: "lorem ",
+      url: 'https://media.wired.com/photos/5faed077f9e76246dde3355d/master/pass/Gear-Surface-Laptop-Go-SOURCE-Microsoft.jpg'
     },
     {
       title: "Tvs",
@@ -31,37 +33,38 @@ const Slider = (props) => {
     },
   ]
 
-  const [currentIndex,setCurrentIndex] = useState(0);
+  const [currentIndex, setCurrentIndex] = useState(0);
 
-  const prevSlide = () =>{
+  const prevSlide = () => {
     const isFirstSlide = currentIndex === 0;
-    const newIndex  = isFirstSlide? slides.length -1 : currentIndex -1  ;
+    const newIndex = isFirstSlide ? slides.length - 1 : currentIndex - 1;
     setCurrentIndex(newIndex);
   };
 
   const nextSlide = () => {
-    const isSecondSlide = currentIndex === slides.length -1 ;
+    const isSecondSlide = currentIndex === slides.length - 1;
     const newSecondIndex = isSecondSlide ? 0 : currentIndex + 1;
     setCurrentIndex(newSecondIndex);
   };
-  
-  // style = {{ backgroundImage: `url(${slides[currentIndex].url})` }}
+
+
+ 
 
   return (
     <div className='slider-container  h-screen w-screen m-auto py-16 px-4 relative   bg-cover duration-500  flex  bg-blue-600  justify-items-center items-center  flex-wrap  '>
-     
 
-      <div 
+
+      <div
         className=' w-2/4 h-2-4 justify-center items-center flex gap-11 bg-white rounded-2xl  group flex-col absolute right-[25%]  p-4 m-4'>
-        <h1 className='font-extrabold text-[50px] text-[#1C4ED8]'>Deal Mode Activated</h1>
-        
+        <h1 className=' bg-blue-700 rounded-xl font-extrabold text-[50px] text-yellow-400 p-2'>Deal Mode Activated</h1>
+
         <img className='w-3/4 h-w-3/4 rounded-lg' src={slides[currentIndex].url} alt='#'></img>
 
         <div className='flex flex-col  text-center'>
           <h1 className='font-extrabold font-xl text-2xl '>{slides[currentIndex].title}</h1>
-
-          <p className='font-light text-[] '>{slides[currentIndex].desc}</p></div>
-
+          <button className='bg-yellow-400 text-blue-600 rounded-md   '>Shop Now</button>
+          {/* <p className='font-light text-[] '>{slides[currentIndex].desc}</p></div> */}
+          </div>
         {/* left arrow */}
         <div onClick={prevSlide} className='hidden group-hover:block absolute top-[50%] -trasnlate-x-0 trnaslate-y-[-50%] left-5 text-2x1 rounded-full p-2 m-4 bg-black/20 text-white cursor-pointerhiden '>
           <BsChevronCompactLeft size={30} />
@@ -70,13 +73,11 @@ const Slider = (props) => {
         <div onClick={nextSlide} className='hidden group-hover:block absolute top-[50%] -trasnlate-x-0 trnaslate-y-[-50%] right-5 text-2x1 rounded-full p-2 m-4 bg-black/20 text-white cursor-pointer'>
           <BsChevronCompactRight size={30} />
         </div>
-        <div className=''>
-          dots
-        </div>
+
 
       </div>
-          
-      
+
+
     </div>
   )
 }
