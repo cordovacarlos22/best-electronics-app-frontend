@@ -43,15 +43,15 @@ const NavBar = () => {
           <span className='text-3x1 text-[#FFE000]'><ion-icon name="pricetags-outline"></ion-icon> </span>
           <h1 className='flex flex-col  text-2xl'>Best Deals <hr /> <span className='text-sm text-[#FFE000]'>Electronics</span></h1>
           <br/>
-          <div onClick={() => setOpen(!open)} className=' text-white  cursor-pointer  '>
-            <ion-icon className='w-28' name={open ? 'close' : 'menu'}></ion-icon>
+          <div onClick={() => setOpen(!open)} className=' text-white  cursor-pointer  items-center flex '>
+            <ion-icon className='w-28' name={open ? 'close' : 'menu'}></ion-icon><span className='items-center'>Menu</span>
           </div>
         </div>
         
         
-        <div onChange={() => setUserLogin(false)} className='search-container items-center flex align-middle drop-shadow-md  m-2'>
-          <input className='w-80 h-10 rounded-l-lg p-1' type="search" name='searchbtn' placeholder={userLogin? 'what can we help you find': `Hi, carlos what can we help you find`} ></input>
-          <button ><span id="searchIcon" className='text-xl py-2  bg-white h-10 rounded-r-lg'><ion-icon name="search-outline"></ion-icon></span></button>
+        <div onChange={() => setUserLogin(false)} className='search-container items-center flex align-middle drop-shadow-md  m-2  justify-center'>
+          <input className='w-80 h-11 rounded-l-lg p-4 text-xl' type="search" name='searchbtn' placeholder={userLogin? 'what can we help you find': `Hi, carlos what can we help you find`} ></input>
+          <button ><span id="searchIcon" className='text-2xl  py-2 bg-white  rounded-r-lg '><ion-icon name="search-outline"></ion-icon></span></button>
         </div>
 
         <div className={` rounded-lg md:flex  text-center align-middle w-12  m-2 cursor-pointer`} >
