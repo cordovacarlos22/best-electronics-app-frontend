@@ -2,7 +2,7 @@
 import React from 'react'
 import { useState } from 'react'
 import { BsChevronCompactLeft, BsChevronCompactRight } from 'react-icons/bs';
-
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 
 const Slider = (props) => {
 
@@ -62,7 +62,7 @@ const Slider = (props) => {
 
         <div className='flex flex-col  text-center'>
           <h1 className='font-extrabold font-xl text-2xl '>{slides[currentIndex].title}</h1>
-          <button className='bg-yellow-400 text-blue-600 rounded-md   '>Shop Now</button>
+          <button className='bg-yellow-400 text-blue-600 rounded-md   hover:text-white'><a href='www.google.com'><ShoppingCartIcon /> Shop Now</a></button>
           {/* <p className='font-light text-[] '>{slides[currentIndex].desc}</p></div> */}
           </div>
         {/* left arrow */}
