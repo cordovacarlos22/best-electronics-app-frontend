@@ -55,7 +55,7 @@ const Slider = (props) => {
 
 
       <div
-        className=' w-2/4 h-2-4 justify-center items-center flex gap-11 bg-white rounded-2xl  group flex-col absolute right-[25%]  p-4 m-4'>
+        className=' w-3/4 h-3/4 justify-center items-center flex gap-11 bg-white rounded-2xl  group flex-col absolute right-[10%]  p-4 m-4'>
         <h1 className=' bg-blue-700 rounded-xl font-extrabold text-[50px] text-yellow-400 p-2'>Deal Mode Activated</h1>
 
         <img className='w-2/4 h-w-2/4 rounded-lg' src={slides[currentIndex].url} alt='#'></img>
