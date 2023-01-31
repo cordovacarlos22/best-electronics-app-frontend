@@ -14,7 +14,7 @@ const Product = (item) => {
         <p className='text-red-600  font-bold text-2xl m-2'>{item.price}</p>
         <p className='pb-2'>Clearance </p>
         <span className='text-white bg-red-600 m-2 text-lx p-2'>reg price: {item.regprice}</span>
-        <button className='bg-yellow-400 rounded-sm items-center place-items-center justify-center  flex m-5 p-2 w-40'><a href="www.google.com"><ShoppingCartIcon /> Shop now</a></button>
+        <button className='bg-yellow-400 rounded-sm items-center place-items-center justify-center  flex m-5 p-2 w-40 hover:text-blue-600'><a href="www.google.com"><ShoppingCartIcon /> Shop now</a></button>
       </div>
     </div>
   )

@@ -9,11 +9,11 @@ const Footer = () => {
       
      <div className='main-container w-screen h-80 bg-blue-600  flex p-5 flex-col  flex-wrap'>
       
-      <div className='footer-top-container  flex  items-center justify-around  text-gray-200 pb-2'>
+      <div className='footer-top-container  flex  items-center justify-around  text-gray-200 pb-2 flex-wrap'>
         <div className='local-color flex  flex-col items-center  justify-center '>
           <a className='flex flex-col items-center' href='w' alt="$">
           < LocalShippingIcon/>
-            <h3 className='text-bold hover:text-yellow-400  text-sm'>Shipping,Delivery & Store Pickup</h3>
+            <h3 className='text-bold hover:text-yellow-400  '>Shipping,Delivery & Store Pickup</h3>
           </a>
         </div>
         <div className='local-color flex  flex-col items-center justify-center'>
