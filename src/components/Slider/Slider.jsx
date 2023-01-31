@@ -9,26 +9,26 @@ const Slider = (props) => {
   const slides = [
     {
       title: "Laptops and computers",
-      desc: "lorem ",
+      alt: "Laptops and computers ",
       url: 'https://media.wired.com/photos/5faed077f9e76246dde3355d/master/pass/Gear-Surface-Laptop-Go-SOURCE-Microsoft.jpg'
     },
     {
       title: "Tvs",
-      desc: "lorem ",
+      alt: "Tvs ",
       url: 'https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/best-tvs-good-housekeeping-1657720829.jpg'
     },
     {
       title: "Apple",
-      desc: "lorem ",
+      alt: "Apple Products ",
       url: 'https://images.macrumors.com/t/xrfe0ee20CA_Ce6IyM9VEdjc_6I=/1600x0/article-new/2022/09/apple-beta-lineup-2022.jpg'
     },
     {
       title: "Videos Games",
-      desc: "lorem ",
+      alt: "Video games ",
       url: 'https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/gh-index-gamingconsoles-052-print-preview-1659705142.jpg?crop=1.00xw:0.753xh;0,0.0831xh&resize=1200:*'
     }, {
       title: "Major Appliances",
-      desc: "lorem ",
+      alt: "major Appliances ",
       url: 'https://pisces.bbystatic.com/image2/BestBuy_US/dam/pm-sm-MMT-644589_DER-535b48fa-dd2f-451a-9b58-3d3dff5806be.jpg;maxHeight=350;maxWidth=1000'
     },
   ]
@@ -56,13 +56,13 @@ const Slider = (props) => {
 
       <div
         className=' w-3/4 h-3/4 justify-center items-center flex gap-11 bg-white rounded-2xl  group flex-col absolute right-[10%]  p-4 m-4'>
-        <h1 className=' bg-blue-700 rounded-xl font-extrabold text-[50px] text-yellow-400 p-2'>Deal Mode Activated</h1>
+        <h1 className=' bg-blue-700 rounded-xl font-extrabold text-[50px] text-yellow-400 p-1 mt-1'>Deal Mode Activated</h1>
 
-        <img className='w-2/4 h-w-1/4 rounded-lg' src={slides[currentIndex].url} alt='#'></img>
+        <img className='w-2/4 h-w-1/4 rounded-lg' src={slides[currentIndex].url} alt={slides[currentIndex].alt}></img>
 
         <div className='flex flex-col  text-center'>
-          <h1 className='font-extrabold font-xl text-2xl '>{slides[currentIndex].title}</h1>
-          <button className='bg-yellow-400 text-blue-600 rounded-md   hover:text-white'><a href='www.google.com'><ShoppingCartIcon /> Shop Now</a></button>
+          <h1 className='font-extrabold  text-2xl '>{slides[currentIndex].title}</h1>
+          <button className='bg-yellow-400 text-blue-600 rounded-md   hover:text-white w-35 p-1'><a href='www.google.com'><ShoppingCartIcon /> Shop Now</a></button>
           {/* <p className='font-light text-[] '>{slides[currentIndex].desc}</p></div> */}
           </div>
         {/* left arrow */}
