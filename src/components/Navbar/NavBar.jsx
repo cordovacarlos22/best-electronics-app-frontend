@@ -40,8 +40,10 @@ const NavBar = () => {
     <div className='  w-full z-40'> 
       <nav className='md:flex bg-blue-700  py-6 items-center justify-around p-5 '>
         <div  className='logo-container font-bold text-2x1 cursor-pointer flex items-center font-[Poppins] text-white gap-2 ml-0.5 text-2xl md:items-center m-2'>
-          <span className='text-3x1 text-[#FFE000]'><ion-icon name="pricetags-outline"></ion-icon> </span>
-          <h1 className='flex flex-col  text-2xl'>Best Deals <hr /> <span className='text-sm text-[#FFE000]'>Electronics</span></h1>
+          <a href='/' alt='logo'>
+            <span className='text-3x1 text-[#FFE000]'><ion-icon name="pricetags-outline"></ion-icon> </span>
+            <h1 className='flex flex-col  text-2xl'>Best Deals <hr /> <span className='text-sm text-[#FFE000]'>Electronics</span></h1>
+          </a>
           <br/>
           <div onClick={() => setOpen(!open)} className=' text-white  cursor-pointer  items-center flex '>
             <ion-icon className='w-28' name={open ? 'close' : 'menu'}></ion-icon><span className='items-center'>Menu</span>
