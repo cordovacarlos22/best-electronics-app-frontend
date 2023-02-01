@@ -5,6 +5,7 @@ import { Instagram, Twitter } from '@mui/icons-material';
 import PinDropIcon from '@mui/icons-material/PinDrop';
 import CallIcon from '@mui/icons-material/Call';
 import AttachEmailIcon from '@mui/icons-material/AttachEmail';
+import { Link } from 'react-router-dom';
 const Footer = () => {
 
   const usefulLinks = [
@@ -59,10 +60,10 @@ const Footer = () => {
       <div className='flex flex-wrap w-full h-full justify-center items-center text-white '>
         <div className='left-container flex-1 justify-center items-center flex flex-col'>
           <div className='logo-container font-bold text-2x1 cursor-pointer flex items-center font-[Poppins] text-white gap-2  text-2xl md:items-center '>
-            <a className='logo-container font-bold text-2x1 cursor-pointer flex items-center font-[Poppins] text-white gap-2  text-2xl md:items-center' href='/' alt='logo'>
+            <Link className='logo-container font-bold text-2x1 cursor-pointer flex items-center font-[Poppins] text-white gap-2  text-2xl md:items-center' as={Link}  to='/' alt='logo'>
               <span className='text-3x1 text-[#FFE000]'><ion-icon name="pricetags-outline"></ion-icon> </span>
               <h1 className='flex flex-col  text-2xl'>Best Deals <hr /> <span className='text-sm text-[#FFE000]'>Electronics</span></h1>
-            </a>
+            </Link>
             <br />
           </div>
           <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sunt ex facilis nihil fuga non sit harum odio optio consequatur facere.</p>
@@ -85,7 +86,7 @@ const Footer = () => {
           <h1 className='text-4xl decoration-1 flex justify-center'>Useful Links</h1>
           <ul className='p-2 flex flex-col'>
             {usefulLinks && usefulLinks.map(links => (
-              <a href={links.url}><li className='flex justify-evenly text-md items-center hover:text-yellow-400'>{links.title}</li></a>
+              <Link href={links.url}><li className='flex justify-evenly text-md items-center hover:text-yellow-400'>{links.title}</li></Link>
             ))}
           </ul>
         </div>
