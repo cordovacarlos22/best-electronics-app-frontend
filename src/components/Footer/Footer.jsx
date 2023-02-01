@@ -54,7 +54,7 @@ const Footer = () => {
   return (
 
 
-    <div className='main-container w-screen h-80 bg-blue-600  flex p-5 flex-col  flex-wrap  justify-center items-center'>
+    <div className='main-container w-screen h-full bg-blue-600  flex p-5 flex-col  flex-wrap  justify-center items-center'>
 
       <div className='flex flex-wrap w-full h-full justify-center items-center text-white '>
         <div className='left-container flex-1 justify-center items-center flex flex-col'>
@@ -94,11 +94,9 @@ const Footer = () => {
           <p><PinDropIcon />0001 Resource , Rialto CA 00001</p>
           <p><CallIcon/> +1 0003 0001</p>
           <p><AttachEmailIcon/>contact@bestdeals@dev.com</p>
+          <img className='w-60' src="https://i.postimg.cc/jd851bQD/6220ac7d912013c51947f9c6.png" alt="payment-logo"></img>
         </div>
-
-
-
-
+          
       </div>
     </div>
 
