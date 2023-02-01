@@ -54,10 +54,10 @@ const Footer = () => {
   return (
 
 
-    <div className='main-container w-screen h-80 bg-blue-600  flex p-5 flex-col  flex-wrap  justify-center'>
+    <div className='main-container w-screen h-80 bg-blue-600  flex p-5 flex-col  flex-wrap  justify-center items-center'>
 
       <div className='flex flex-wrap w-full h-full justify-center items-center text-white '>
-        <div className='left-container flex-1'>
+        <div className='left-container flex-1 justify-center items-center flex flex-col'>
           <div className='logo-container font-bold text-2x1 cursor-pointer flex items-center font-[Poppins] text-white gap-2  text-2xl md:items-center '>
             <a className='logo-container font-bold text-2x1 cursor-pointer flex items-center font-[Poppins] text-white gap-2  text-2xl md:items-center' href='/' alt='logo'>
               <span className='text-3x1 text-[#FFE000]'><ion-icon name="pricetags-outline"></ion-icon> </span>
@@ -74,15 +74,15 @@ const Footer = () => {
 
         </div>
         <div className='center-container  flex-1 justify-center'>
-          <h1 className='text-4xl decoration-1'>Useful Links</h1>
-          <ul className='p-2 flex flex-col justify-evenly'>
+          <h1 className='text-4xl decoration-1 flex justify-center'>Useful Links</h1>
+          <ul className='p-2 flex flex-col'>
             {usefulLinks && usefulLinks.map(links => (
-              <a href={links.url}><li>{links.title}</li></a>
+              <a href={links.url}><li className='flex justify-evenly text-md items-center hover:text-yellow-400'>{links.title}</li></a>
             ))}
           </ul>
         </div>
-        <div className='right-container  flex-1 flex flex-col gap-3 p-2'>
-          <h1 className='text-4xl'>Contact</h1>
+        <div className='right-container  flex-1 flex flex-col gap-3 p-2 justify-center items-center'>
+          <h1 className='text-4xl items-center '>Contact</h1>
           <p><PinDropIcon />0001 Resource , Rialto CA 00001</p>
           <p><CallIcon/> +1 0003 0001</p>
           <p><AttachEmailIcon/>contact@bestdeals@dev.com</p>
