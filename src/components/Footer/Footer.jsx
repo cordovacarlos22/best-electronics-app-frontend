@@ -66,10 +66,18 @@ const Footer = () => {
             <br />
           </div>
           <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sunt ex facilis nihil fuga non sit harum odio optio consequatur facere.</p>
-          <div key="social-media-logos" className='social-container flex flex-wrap text-white gap-5 text-5xl cursor-pointer  p-4  '>
-            < FacebookIcon />
-            <Instagram />
-            <Twitter />
+          <div key="social-media-logos" className='social-container flex flex-wrap text-white gap-6  cursor-pointer  p-4  '>
+           <div className='hover:text-yellow-300  '>
+              < FacebookIcon />
+             
+           </div>
+           <div className='hover:text-yellow-300'>
+              <Instagram />
+              
+           </div>
+           <div className='hover:text-yellow-300'>
+              <Twitter />
+           </div>
           </div>
 
         </div>
