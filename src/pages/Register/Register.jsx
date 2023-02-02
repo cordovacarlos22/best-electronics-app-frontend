@@ -70,7 +70,7 @@ const Register = () => {
       className='w-screen h-screen  flex  justify-center items-center bg-gradient-to-tr from-green-300 to-blue-600'
     >
       <div 
-      className='flex flex-col  w-2/4 h-2/4 justify-center items-center border-2 gap-2 rounded-xl border-yellow-400'
+      className='flex flex-col  w-3/4 h3/4 justify-center items-center border-2 gap-2 rounded-xl border-yellow-400'
       >
         <h1 className='text-3xl text-extrabold text-blue-600 '>CREATE AN ACCOUNT</h1>
         <form className='form flex flex-col gap-2 w-2/4'>
@@ -96,9 +96,9 @@ const Register = () => {
             placeholder="confirm password" />
           <p>
             By creating an account, I consent to the processing of my personal
-            data in accordance with the <b>PRIVACY POLICY</b>
+            data in accordance with the <b className='text-red-600'>PRIVACY POLICY</b>
           </p>
-          <button>CREATE</button>
+          <button className='bg-yellow-400 mb-2 text-blue-700 text-extrabold'>CREATE</button>
         </form>
       </div>
     </div>
