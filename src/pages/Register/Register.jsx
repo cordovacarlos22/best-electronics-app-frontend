@@ -1,6 +1,6 @@
 import React from 'react'
-import styled from "styled-components";
-import { useState } from 'react';
+// import styled from "styled-components";
+// import { useState } from 'react';
 
 // const Container = styled.div`
 //   width: 100vw;
@@ -56,15 +56,15 @@ import { useState } from 'react';
 // `;
 const Register = () => {
 
-  const [name, setName] = useState(" ");
-  const [email, setEmail] = useState(" ");
-  const [message, setMessage] = useState("");
+  // const [name, setName] = useState(" ");
+  // const [email, setEmail] = useState(" ");
+  // const [message, setMessage] = useState("");
 
- const backgrounds=[
-  {
-     url:'https://cdn.stocksnap.io/img-thumbs/280h/colorful-bokeh_FSOBBNPKKZ.jpg'
-  }
- ]
+//  const backgrounds=[
+//   {
+//      url:'https://cdn.stocksnap.io/img-thumbs/280h/colorful-bokeh_FSOBBNPKKZ.jpg'
+//   }
+//  ]
   return (
     <div   
       className='w-screen h-screen  flex  justify-center items-center bg-gradient-to-tr from-green-300 to-blue-600'
