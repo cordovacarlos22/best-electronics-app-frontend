@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
-import FooterCompo from '../../components/FooterCompo/FooterCompo';
+
 // import styled from "styled-components";
 // import { useState } from 'react';
 
@@ -83,7 +83,7 @@ const Login = () => {
         >
          
           <h1 className='text-3xl text-extrabold text-blue-600 '> Dest Deals Electronic Sign In</h1>
-          <form className='form flex flex-col gap-2 w-3/4 h-2/4 justify-center'>
+          <form className='form flex flex-col gap-2 w-3/4 h-2/4 justify-center p-2'>
 
 
             <input
@@ -105,7 +105,7 @@ const Login = () => {
         </div>
         
      </div>
-      <div className='w-screen h-[200px] bg-white justify-center items-center flex p-2'>
+      <div className='w-screen h-[100px] bg-white justify-center items-center flex p-2'>
         <p >
           Prices and offers are subject to change. © 2023 Best Deals. All rights reserved. Best Deals, the Best Deals logo, the Tag Design  are trademarks of Best Deals.
         </p>
