@@ -66,7 +66,7 @@ const NavBar = () => {
           <ul onClick={() => setOpen(!open)} className='menu-ul  md:flex-row  md:flex text-xl  z-40 absolute md:static bg-blue-700 md:pb-0 pb-12 md:z-auto  left-0 w-full md:pl0- pl-9  duration-500 ease-in'>
             {
               Links && Links.map(link => (
-                <li key={link.name} className={`md:ml-8 text-teal-50 md:my-0 my-7 ${open ? 'show' : 'hidden'} `}>
+                <li key={link.name} className={`md:ml-8 text-teal-50 md:my-0 my-7  `}>
                   <Link className='hover:text-[#FFE000] transiton ease-in duration-300 ' as={Link} to={link.link}> {link.name}</Link>
                 </li>
               ))
