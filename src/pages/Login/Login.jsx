@@ -85,12 +85,18 @@ const Login = () => {
           <h1 className='text-3xl text-extrabold text-blue-600 '> Dest Deals Electronic Sign In</h1>
           <form className='form flex flex-col gap-2 w-3/4 h-2/4 justify-center p-2'>
 
-
+            <label for="username">Username</label>
             <input
+              id="username"
+              name="username"
+              type="text"
               className='border-2'
               placeholder="username" />
-
+            <label for="password">Password</label>
             <input
+              id="password"
+              name='password'
+              type='password'
               className='border-2'
               placeholder="password" />
 

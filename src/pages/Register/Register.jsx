@@ -1,61 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 
-// import styled from "styled-components";
-// import { useState } from 'react';
-
-// const Container = styled.div`
-//   width: 100vw;
-//   height: 100vh;
-//   background: linear-gradient(
-//       rgba(255, 255, 255, 0.5),
-//       rgba(255, 255, 255, 0.5)
-//     ),
-//     url("https://images.pexels.com/photos/6984661/pexels-photo-6984661.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940")
-//       center;
-//   background-size: cover;
-//   display: flex;
-//   align-items: center;
-//   justify-content: center;
-// `;
-
-// const Wrapper = styled.div`
-//   width: 40%;
-//   padding: 20px;
-//   background-color: white;
-
-// `;
-
-// const Title = styled.h1`
-//   font-size: 24px;
-//   font-weight: 300;
-// `;
-
-// const Form = styled.form`
-//   display: flex;
-//   flex-wrap: wrap;
-// `;
-
-// const Input = styled.input`
-//   flex: 1;
-//   min-width: 40%;
-//   margin: 20px 10px 0px 0px;
-//   padding: 10px;
-// `;
-
-// const Agreement = styled.span`
-//   font-size: 12px;
-//   margin: 20px 0px;
-// `;
-
-// const Button = styled.button`
-//   width: 40%;
-//   border: none;
-//   padding: 15px 20px;
-//   background-color: teal;
-//   color: white;
-//   cursor: pointer;
-// `;
 const Register = () => {
 
 
@@ -85,27 +30,44 @@ const Register = () => {
           <h1 className='text-2xl text-extrabold text-blue-600   items-center p-2'> Dest Deals Electronic Register</h1>
           <form className='form flex flex-col gap-2 w-3/4 h-2/4 justify-center'>
 
-
+            <label for >Name</label>
             <input
+              id="name"
+              name="name"
+              type="text"
               className='border-2'
               placeholder="name"
 
             />
+            <label for="lastname"></label>
             <input
+              id="lastname"
+              name="lastname"
+              type="text"
               className='border-2'
               placeholder="last name" />
+              <label for="username">Username</label>
             <input
+              id="username"
+              name="username"
+              type="text"
               className='border-2'
               placeholder="username" />
+             <label for="email">Email</label>
             <input
+              id="email"
+              name="email"
+              type="email"
               className='border-2'
               placeholder="email" />
+              <label for="password">Password</label>
             <input
+              id="password"
+              name="password"
+              type="password"
               className='border-2'
               placeholder="password" />
-            <input
-              className='border-2'
-              placeholder="confirm password" />
+
             <p>
               By creating an account, I consent to the processing of my personal
               data in accordance with the <b className='text-red-600'>PRIVACY POLICY</b>
