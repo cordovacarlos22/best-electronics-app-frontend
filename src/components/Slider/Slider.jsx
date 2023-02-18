@@ -1,11 +1,27 @@
 
 import React from 'react'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { BsChevronCompactLeft, BsChevronCompactRight } from 'react-icons/bs';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import { Link } from 'react-router-dom';
-
+import axios from 'axios';
 const Slider = (props) => {
+  const API_URL = "http://localhost:3002";
+  const getSlides = async (id, title, alt, url) => {
+    var data = {
+      "id": id,
+      "title": title,
+      "alt": alt,
+      "url": url,
+    }
+    const response = await axios.get(`${API_URL}/login/slider/sliderslist`, { data });
+    console.log("api response", response);
+    return response;
+  }
+
+  useEffect(()=>{
+   getSlides()
+  },[])
 
   const slides = [
     {
