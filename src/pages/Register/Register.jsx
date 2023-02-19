@@ -1,8 +1,34 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
-
+import { signup } from '../../services/auth.service';
+import { UserContext } from '../../context/userContext';
+import { useEffect, useState } from 'react';
 const Register = () => {
 
+  //! sets token session
+  const { token} = useState(UserContext);
+
+  // let [mode, setMode] = useState("login")
+  //? usestate hook for form
+  let [firstName, setFirstName] = useState("")
+  let [lastName, setLastname] = useState("")
+  let [username, setUsernarme] = useState("")
+  let [email, setEmail] = useState("")
+  let [password, setPassword] = useState("")
+  
+
+
+  //? return user token after registration
+  useEffect(() => {
+    console.log("token", token);
+  }, [token]);
+
+  //! handles signup form
+  const onSubmitSignup = async (event) => {
+    event.preventDefault();
+    const response = await signup(firstName, lastName, username, email, password);
+    console.log("service responsed", response);
+  }
 
   return (
     <div
@@ -28,57 +54,70 @@ const Register = () => {
         >
 
           <h1 className='text-2xl text-extrabold text-blue-600   items-center p-2'> Dest Deals Electronic Register</h1>
-          <form className='form flex flex-col gap-2 w-3/4 h-2/4 justify-center'>
+          <form onSubmit={onSubmitSignup} className='form flex flex-col gap-2 w-3/4 h-2/4 justify-center'>
 
-            <label for >Name</label>
+
             <input
+              value={firstName}
               id="name"
               name="name"
               type="text"
               className='border-2'
               placeholder="name"
-
+              onChange={({ target }) => setFirstName(target.value)}
             />
-            <label for="lastname"></label>
+
             <input
+              value={lastName}
               id="lastname"
               name="lastname"
               type="text"
               className='border-2'
-              placeholder="last name" />
-              <label for="username">Username</label>
+              placeholder="last name" 
+              onChange={({ target }) => setLastname(target.value)}
+              />
+             
             <input
+              value={username}
               id="username"
               name="username"
               type="text"
               className='border-2'
-              placeholder="username" />
-             <label for="email">Email</label>
+              placeholder="username"
+              onChange={({ target }) => setUsernarme(target.value)}
+              />
+
             <input
+              value={email}
               id="email"
               name="email"
               type="email"
               className='border-2'
-              placeholder="email" />
-              <label for="password">Password</label>
+              placeholder="email"
+              onChange={({ target }) => setEmail(target.value)}
+              />
+
             <input
+              value={password}
               id="password"
               name="password"
               type="password"
               className='border-2'
-              placeholder="password" />
+              placeholder="password"
+              onChange={({ target }) => setPassword(target.value)}
+               />
 
             <p>
               By creating an account, I consent to the processing of my personal
               data in accordance with the <b className='text-red-600'>PRIVACY POLICY</b>
             </p>
-            <button className='bg-yellow-400 mb-2 text-blue-700 text-extrabold'>CREATE</button>
+            <button type="submit" className='bg-yellow-400 mb-2 text-blue-700 text-extrabold'>Sign Up</button>
           </form>
-          <Link><p className='text-blue-800 hover:underline'>Forgot your password?</p></Link>
+          {/* <Link><p className='text-blue-800 hover:underline'>Forgot your password?</p></Link> */}
           <p className='p-2  flex items-center justify-center w-full'>By continuing you agree to our Terms and Conditions, our Privacy Policy, and the Best Deals  </p>
           <Link as={Link} to="/terms"><span className='text-blue-600 hover:underline'>Terms.</span></Link>
           <hr className='w-full'></hr>
-          <h2 className='p-2'>Don't have an account? <Link as={Link} to="/UserRegister"><span className='text-blue-600 hover:underline'>Create an account</span></Link></h2>
+
         </div>
 
       </div>

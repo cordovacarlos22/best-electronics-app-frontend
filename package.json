@@ -22,6 +22,8 @@
     "font-awesome": "^4.7.0",
     "ionicons": "^6.1.1",
     "react": "^18.2.0",
+    "react-bootstrap": "^2.7.2",
+    "react-create-context": "^1.0.2",
     "react-dom": "^18.2.0",
     "react-hooks": "^1.0.1",
     "react-icons": "^4.7.1",

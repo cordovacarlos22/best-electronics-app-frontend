@@ -1,8 +1,33 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
+import { useState,useEffect,useContext } from 'react';
+import { login} from '../../services/auth.service';
+import { UserContext } from '../../context/userContext';
 
 const Login = () => {
 
+  const { token, setupSession } = useContext(UserContext)
+
+  let [username, setUsernarme] = useState("")
+  let [password, setPassword] = useState("")
+   
+
+  useEffect(() => {
+    console.log("token", token);
+  }, [token]);
+  //!! handles login form 
+  const onSubmitLogin = async (event) => {
+    event.preventDefault();
+    
+    const response = await login(username, password);
+
+    if (response.status === 200) {
+      setupSession(response.data.result)
+      // console.log("TOKEN", token)
+
+    }
+
+  }
 
   return (
     <div
@@ -28,22 +53,29 @@ const Login = () => {
         >
 
           <h1 className='text-3xl text-extrabold text-blue-600 '> Dest Deals Electronic Sign In</h1>
-          <form className='form flex flex-col gap-2 w-3/4 h-2/4 justify-center p-2'>
+          <form onSubmit={onSubmitLogin} className='form flex flex-col gap-2 w-3/4 h-2/4 justify-center p-2'>
 
-            <label for="username">Username</label>
+            
             <input
+             value={username}
               id="username"
               name="username"
               type="text"
               className='border-2'
-              placeholder="username" />
-            <label for="password">Password</label>
+              placeholder="username"
+              onChange={({ target }) => setUsernarme(target.value)}
+              />
+           
+
             <input
+              value={password}
               id="password"
               name='password'
               type='password'
               className='border-2'
-              placeholder="password" />
+              placeholder="password"
+              onChange={({ target }) => setPassword(target.value)}
+              />
 
 
             <button className='bg-blue-600 mb-2 text-white text-xl text-extrabold'>Sign In</button>
