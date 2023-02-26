@@ -6,6 +6,7 @@ import { getProductList } from '../services/products.service'
 import CartItem from './CartItem'
 import CartResume from './CartResume'
 import NavBar from './Navbar/NavBar'
+import Payment from './Pay/Payment';
 const Cart = () => {
     const { cart, cartResume } = useContext(CartContext)
     const [productList, setProductList] = useState([])
@@ -67,23 +68,7 @@ const Cart = () => {
 
              </thead>
             </table>
-            <h1>Pay</h1>
-            <div style={{ maxWidth: "240px", minHeight: "200px" }}>
-                <PayPalScriptProvider
-                    options={{
-                        "client-id": process.env.REACT_APP_PAYPAL_CLIENT_ID,
-                        components: "buttons",
-                        currency: "US"
-                    }}
-                >
-                    <Paypal
-                        currency={"US"}
-                        amount={10}
-                        onPaid={handleOnPaid}
-                        showSpinner={true}
-                    />
-                </PayPalScriptProvider>
-            </div>
+            <Payment/>
         </div>
 
     )
