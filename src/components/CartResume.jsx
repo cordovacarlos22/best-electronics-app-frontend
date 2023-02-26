@@ -4,10 +4,10 @@ import { Row, Col } from "react-bootstrap";
 const CartResume = ({ resume }) => {
 
     return (
-     <div className='d-flex'>
-            <Row className='d-flex'>
+     <div className='d-flex '>
+            <Row className='d-flex flex-row'>
                 <Col md={4} className="align-self-center mr-3">
-                    Monto de compra
+                    items Total
                 </Col>
                 <Col md={4} className="align-self-center mr-3">
                     $ {resume.amount}
@@ -15,7 +15,7 @@ const CartResume = ({ resume }) => {
             </Row>
             <Row>
                 <Col md={4} className="align-self-center mr-3">
-                    Impuestos = {process.env.REACT_APP_US_TAXES}%
+                    Taxes = {process.env.REACT_APP_US_TAXES}%
                 </Col>
                 <Col md={4} className="align-self-center mr-3">
                     $ {resume.tax}

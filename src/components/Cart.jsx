@@ -35,15 +35,15 @@ const Cart = () => {
             <NavBar/>
             <h1 className='d-flex  justify-center'>Shopping Cart</h1>
              
-            <table class="table-auto w-3/4">
-                <thead>
+            <table class="table-fixed w-3/4 d-flex">
+                <thead className='d-flex'>
                     <tr>
                         <th>Price</th>
                         <th>Amount</th>
                         <th>Subtotal</th>
                     </tr>
                 </thead>
-               <thead>
+               <thead className='d-flex'>
 
 
                
@@ -53,7 +53,7 @@ const Cart = () => {
                 productList.length && cart && cart.map(item => {
                     var product = findProduct(item.sku)
                     return (
-                        <CartItem key={item.sku} product={product} cartData={item} />
+                        <CartItem className="d-flex" key={item.sku} product={product} cartData={item} />
                         )
                     })
                 }
