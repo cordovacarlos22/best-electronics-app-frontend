@@ -52,10 +52,13 @@ const Footer = () => {
       alt: "Terms"
     },
   ]
+
+ 
+ 
   return (
 
 
-    <div className='main-container w-screen h-full bg-blue-600  flex p-5 flex-col  flex-wrap  justify-center items-center'>
+    <footer className='main-container w-screen h-full bg-blue-600  flex p-5 flex-col  flex-wrap  justify-center items-center'>
 
       <div className='flex flex-wrap w-full h-full justify-center items-center text-white '>
         <div className='left-container flex-1 justify-center items-center flex flex-col'>
@@ -86,7 +89,7 @@ const Footer = () => {
           <h1 className='text-4xl decoration-1 flex justify-center'>Useful Links</h1>
           <ul className='p-2 flex flex-col'>
             {usefulLinks && usefulLinks.map(links => (
-              <Link href={links.url}><li className='flex justify-evenly text-md items-center hover:text-yellow-400'>{links.title}</li></Link>
+              <Link key={links.key} href={links.url}><li className='flex justify-evenly text-md items-center hover:text-yellow-400'>{links.title}</li></Link>
             ))}
           </ul>
         </div>
@@ -99,7 +102,7 @@ const Footer = () => {
         </div>
           
       </div>
-    </div>
+    </footer>
 
 
   )

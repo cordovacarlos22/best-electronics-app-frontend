@@ -1,39 +1,50 @@
-import React, { useState} from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import { Link } from 'react-router-dom'
 import './Navbar.css';
-// import { useState } from 'react'
 import ShoppingCart from '.././ShoppinCart/ShoppinCart'
 
+import { UserContext } from '../../context/userContext';
+import { accountInfo } from '../../services/user.service';
 const NavBar = () => {
 
  const [userLogin,setUserLogin] = useState(true);
 
-//  if (placeholder == ''){
-//    setPlaceHolder('Hi, What can we help you find? ') 
-//  }
-//  else {
-//    setPlaceHolder(`Hi, (user.name) What can we help you find?`)
-
-//  }
-
-// const users = [
-//   {name:"carlos"}
-// ] 
 
   //? obj with path links and list name
    let Links = [
     {name:"HOME",link:"/"},
-    { name: "PRODUCTS", link: "/PRODUCTS" },
-    { name: "REGISTER", link: "/UserRegister" },
-    { name: "LOGIN", link: "/UserLogin" },
-    // { name: "CART", link: "/cart" },
+    { name: "PRODUCTS", link: "/productslist", },
+    // { name: "REGISTER", link: "/UserRegister" },
+    
+    
 
-  ]
+  ]        
+  const { token, deleteSession } = useContext(UserContext)
 
   
+  const [nombre, setNombre] = useState("..")
+
+  const loadAccountInfo = async (token) => {
+     
+    const user = await accountInfo(token);
+    console.log("user", user)
+    if (user.status === 200) {
+      
+      setNombre(user.data.name);
+      
+      
+    }
+  }
+  
+
+  useEffect(() => {
+    console.log("token nav bar ",token)
+    if (token != null)
+      loadAccountInfo(token)
+  }, [token])
 
   let [open,setOpen] = useState(false);
- 
+   
   return (
  
    
@@ -52,7 +63,7 @@ const NavBar = () => {
         </div>
         
         <div onChange={() => setUserLogin(false)} className='search-container items-center flex align-middle drop-shadow-md  m-2  justify-center flex-1'>
-          <input className='w-80 h-11 rounded-l-lg p-4 text-xl flex-1' type="search" name='searchbtn' placeholder={userLogin? 'what can we help you find': `Hi, carlos what can we help you find`} ></input>
+          <input className='w-80 h-11 rounded-l-lg p-4 text-xl flex-1' type="search" name='searchbtn' placeholder={`Hi, ${nombre} how can we help? `} ></input>
           <button ><span id="searchIcon" className='text-2xl  py-2 bg-white  rounded-r-lg '><ion-icon name="search-outline"></ion-icon></span></button>
         </div>
 
@@ -70,7 +81,9 @@ const NavBar = () => {
                   <Link className='hover:text-[#FFE000] transiton ease-in duration-300 ' as={Link} to={link.link}> {link.name}</Link>
                 </li>
               ))
+            
             }
+            <li className={`md:ml-8 text-teal-50 md:my-0 my-7 ${open ? 'show' : 'hidden'}`} onClick={() => deleteSession()} ><Link className='hover:text-[#FFE000] transiton ease-in duration-300'><ion-icon name="log-out-outline"></ion-icon>LOG OUT</Link></li>
           </ul>
         </div>
          

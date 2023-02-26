@@ -7,7 +7,7 @@ const { Provider, Consumer } = UserContext
 const UserProvider = ({ children }) => {
   const [token, setToken] = useState(null)
 
-  const [username,setUsername] = useState (" ")
+  // const [username, setUsername] = useState(" ")
 
   useEffect(() => {
     let storedToken = localStorage.getItem("token");
