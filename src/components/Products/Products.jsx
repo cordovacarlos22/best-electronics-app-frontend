@@ -1,5 +1,4 @@
 import React, { useEffect, useState, useContext } from 'react'
-import '/Users/carloscordova/Desktop/best-electronics-app/src/components/Products/Product.css'
 import Product from './Product/Product';
 import {getProductList} from '../../services/products.service'
 import { CartContext } from '../../context/cartContext';

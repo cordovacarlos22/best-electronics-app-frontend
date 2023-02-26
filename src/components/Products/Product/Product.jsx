@@ -1,5 +1,4 @@
 import React from 'react'
-import './Product.css';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import { Link } from 'react-router-dom';
 const Product = (item) => {
