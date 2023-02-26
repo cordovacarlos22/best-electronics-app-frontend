@@ -6,7 +6,7 @@ import { useEffect, useState } from 'react';
 const Register = () => {
 
   //! sets token session
-  const { token} = useState(UserContext);
+  const { token } = useState(UserContext);
 
   // let [mode, setMode] = useState("login")
   //? usestate hook for form
@@ -16,7 +16,7 @@ const Register = () => {
   let [email, setEmail] = useState("")
   let [password, setPassword] = useState("")
   
-
+ 
 
   //? return user token after registration
   useEffect(() => {

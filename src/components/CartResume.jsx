@@ -1,10 +1,15 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Row, Col } from "react-bootstrap";
-
+import { CartContext } from '../context/cartContext'
 const CartResume = ({ resume }) => {
-
+    const { getResume } = useContext(CartContext)
+    
+    const remsumeTotal = (cart) => {
+        console.log("clicked", cart);
+        getResume(cart)
+    }
     return (
-     <div className='d-flex '>
+        <div className='d-flex '>
             <Row className='d-flex flex-row'>
                 <Col md={4} className="align-self-center mr-3">
                     items Total
@@ -29,8 +34,8 @@ const CartResume = ({ resume }) => {
                     $ {resume.total}
                 </Col>
             </Row>
-     </div>
-        
+        </div>
+
     )
 }
 

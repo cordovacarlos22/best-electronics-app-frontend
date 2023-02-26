@@ -50,7 +50,7 @@ const CartProvider = ({children}) => {
         var resume = {"amount" : cart.reduce((sum, item) => sum + (item.price * item.quantity), 0 )}
         resume["tax"] = resume.amount * (process.env.REACT_APP_TAX_PCTG/100)
         resume["total"] = resume.amount + resume.tax
-
+        
         return resume
     }
 

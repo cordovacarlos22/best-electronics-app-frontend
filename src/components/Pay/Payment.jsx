@@ -31,7 +31,7 @@ const Payment = () => {
   }, [stripeToken,history])
   return (
     <div className="d-flex text-center align-center  align-center rounded-md justify-center">
-      <div className="Auth-form-container d-flex justify-center bg-black  text-white align-center cursor-pointer w-1/1 m-4 border-red-100 rounded-lx text-center rounded-xl ">
+      <div role="group" className="Auth-form-container d-flex justify-center bg-black  text-white align-center cursor-pointer w-[8%] m-4 border-red-100 rounded-lx text-center rounded-xl ">
         {stripeToken ? (<span>Processing Order. please wait</span>) : (
           <StripeCheckout
             name="Best Deals Electronics"
@@ -44,7 +44,7 @@ const Payment = () => {
             stripeKey={Key}
             
           >
-            <button className=" d-flex justify-center align-center h-28  rounded-md" ><h1 className='d-flex align-center'>Pay Now</h1></button>
+            <button group className=" d-flex justify-center align-center h-28  rounded-md" ><h1 className='d-flex align-center'>Pay Now</h1></button>
           </StripeCheckout>
         )}
       </div>
